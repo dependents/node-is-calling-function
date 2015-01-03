@@ -1,6 +1,6 @@
 {
   "name": "is-calling-function",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Whether or not a file is calling a particular function",
   "main": "index.js",
   "scripts": {
