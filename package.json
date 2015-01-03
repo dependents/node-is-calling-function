@@ -1,0 +1,34 @@
+{
+  "name": "is-calling-function",
+  "version": "1.0.0",
+  "description": "Whether or not a file is calling a particular function",
+  "main": "index.js",
+  "scripts": {
+    "test": "jscs -p google index.js test/*.js && mocha test/test.js"
+  },
+  "bin": {
+    "is-calling-function": "bin/cli.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mrjoelkemp/node-is-calling-function.git"
+  },
+  "keywords": [
+    "module",
+    "calling",
+    "function"
+  ],
+  "author": "Joel Kemp <joel@mrjoelkemp.com> (http://www.mrjoelkemp.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mrjoelkemp/node-is-calling-function/issues"
+  },
+  "homepage": "https://github.com/mrjoelkemp/node-is-calling-function",
+  "dependencies": {
+    "node-source-walk": "~1.4.1"
+  },
+  "devDependencies": {
+    "jscs": "~1.9.0",
+    "mocha": "~2.1.0"
+  }
+}
