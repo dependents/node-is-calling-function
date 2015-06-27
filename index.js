@@ -10,17 +10,18 @@ module.exports = function(source, functionName) {
   if (!functionName) { throw new Error('functionName not given'); }
 
   var isFileCallingFunction = false;
-  var walker = new Walker({
-    ecmaVersion: 6
-  });
+  var walker = new Walker();
 
   walker.walk(source, function(node) {
-    var isCallExpression = node.type === 'ExpressionStatement' &&
-                           node.expression.type === 'CallExpression';
-
-    if (!isCallExpression) { return; }
-
-    var callee = node.expression.callee;
+    var callee;
+    if (node.type === 'ExpressionStatement' &&
+        node.expression.type === 'CallExpression') {
+      callee = node.expression.callee;
+    } else if (node.type === 'CallExpression') {
+      callee = node.callee;
+    } else {
+      return false;
+    }
 
     if (!callee) { return; }
 

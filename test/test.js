@@ -11,6 +11,10 @@ describe('is-calling-function', function() {
     assert.ok(isCallingFunction('a.foo();', 'foo'));
   });
 
+  it('works for es6', function() {
+    assert.ok(isCallingFunction('() => foo();', 'foo'));
+  });
+
   it('works for named iife', function() {
     assert.ok(isCallingFunction('(function foo(){})();', 'foo'));
   });
